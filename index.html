@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UniBus Live — NPIUB Project Fair 2026</title>
+  <meta name="description" content="A production-grade, real-time university bus tracking platform. NPI University of Bangladesh · Final Year Project · 2026." />
+  <link rel="icon" type="image/png" href="npi-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --ink: #0f172a;
+      --ink-2: #334155;
+      --muted: #64748b;
+      --hair: #e2e8f0;
+      --green: #047857;
+      --green-d: #065f46;
+      --green-soft: #ecfdf5;
+      --amber: #b45309;
+      --amber-soft: #fef3c7;
+      --navy: #1e3a8a;
+      --navy-soft: #dbeafe;
+      --shadow: 0 14px 32px -18px rgba(15, 23, 42, 0.24);
+      --shadow-lg: 0 28px 52px -22px rgba(15, 23, 42, 0.32);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.005em;
+    }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* HERO */
+    .hero {
+      background:
+        radial-gradient(ellipse at 88% 12%, rgba(4, 120, 87, 0.34), transparent 52%),
+        radial-gradient(ellipse at 12% 88%, rgba(180, 83, 9, 0.28), transparent 55%),
+        linear-gradient(135deg, #0a1325 0%, #0f172a 50%, #131f3d 100%);
+      color: white;
+      position: relative;
+    }
+    .hero::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+      background: linear-gradient(90deg, var(--green), var(--amber), var(--green));
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 0;
+    }
+    .nav .brand { display: flex; align-items: center; gap: 14px; }
+    .nav .brand img { width: 48px; height: 48px; object-fit: contain; }
+    .nav .brand .name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 14px;
+      letter-spacing: 0.2px;
+    }
+    .nav .brand .dept {
+      font-size: 11px; color: rgba(255,255,255,0.7);
+      margin-top: 2px;
+    }
+    .nav .links { display: flex; gap: 24px; }
+    .nav .links a {
+      color: rgba(255,255,255,0.8); text-decoration: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600; font-size: 14px;
+      transition: color 0.15s;
+    }
+    .nav .links a:hover { color: white; }
+
+    .hero-body {
+      padding: 80px 0 120px;
+      text-align: center;
+    }
+    .hero-body .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 6pt 16pt;
+      background: rgba(180, 83, 9, 0.18);
+      border: 1px solid rgba(180, 83, 9, 0.4);
+      color: #fcd34d;
+      font-size: 10px; letter-spacing: 4px; font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 999px;
+    }
+    .hero-body h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(48px, 8vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      margin: 22px 0 0 0;
+    }
+    .hero-body h1 .accent {
+      background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #047857 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-body .tagline {
+      margin: 24px auto 0;
+      max-width: 720px;
+      font-size: 18px; line-height: 1.5;
+      color: rgba(255,255,255,0.85);
+    }
+    .hero-body .ctas {
+      margin-top: 36px;
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 14px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary {
+      background: white; color: var(--ink);
+      box-shadow: 0 12px 28px -10px rgba(0,0,0,0.4);
+    }
+    .btn.ghost {
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    /* STATS */
+    .stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin: -60px 0 0;
+      position: relative;
+      z-index: 2;
+    }
+    .stat {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 22px 24px;
+      box-shadow: var(--shadow-lg);
+      border-top: 5px solid var(--green);
+    }
+    .stat:nth-child(2) { border-top-color: var(--amber); }
+    .stat:nth-child(3) { border-top-color: var(--green); }
+    .stat:nth-child(4) { border-top-color: var(--amber); }
+    .stat .num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 42px;
+      letter-spacing: -1px; line-height: 1;
+      color: var(--green-d);
+    }
+    .stat:nth-child(2) .num,
+    .stat:nth-child(4) .num { color: var(--amber); }
+    .stat .lbl {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 13px;
+      color: var(--ink); margin-top: 8px;
+    }
+    .stat .sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+    /* SECTIONS */
+    section { padding: 80px 0; }
+    .section-h {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 36px;
+    }
+    .section-h .num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900; font-size: 16px;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--green);
+    }
+    .section-h .num::after {
+      content: ""; display: inline-block; width: 30px; height: 1px;
+      background: var(--green); margin-left: 12px; vertical-align: middle;
+    }
+    .section-h h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 36px;
+      letter-spacing: -1px;
+      margin: 0;
+    }
+    .section-h .desc {
+      flex: 1;
+      color: var(--muted);
+      font-size: 15px;
+      margin-left: 24px;
+      max-width: 480px;
+      text-align: right;
+    }
+
+    /* POSTERS GRID */
+    .posters {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .poster-card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--green);
+      display: flex; flex-direction: column;
+      gap: 18px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .poster-card:nth-child(2) { border-top-color: var(--navy); }
+    .poster-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .poster-card .preview {
+      aspect-ratio: 2 / 3;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0a1325 0%, #0f172a 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      padding: 28px;
+      color: white;
+    }
+    .poster-card .preview::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px;
+      background: linear-gradient(90deg, var(--green), var(--amber));
+    }
+    .poster-card:nth-child(2) .preview::after {
+      background: linear-gradient(90deg, var(--navy), #38bdf8);
+    }
+    .poster-card .preview .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(180, 83, 9, 0.25);
+      color: #fcd34d;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 9px;
+      letter-spacing: 2px; text-transform: uppercase;
+      border-radius: 999px;
+      align-self: flex-start;
+    }
+    .poster-card:nth-child(2) .preview .badge {
+      background: rgba(30, 58, 138, 0.32);
+      color: #93c5fd;
+    }
+    .poster-card .preview h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 48px;
+      letter-spacing: -1.5px;
+      margin: 18px 0 0 0;
+      line-height: 0.95;
+    }
+    .poster-card .preview h3 .acc {
+      background: linear-gradient(135deg, #34d399 0%, #10b981 60%, #047857 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .poster-card:nth-child(2) .preview h3 .acc {
+      background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #0e7490 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .poster-card .preview .sub {
+      margin-top: auto;
+      font-size: 12px;
+      color: rgba(255,255,255,0.75);
+    }
+    .poster-card .meta .lbl {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 10px;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .poster-card .meta h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 22px;
+      margin: 6px 0 0 0;
+      letter-spacing: -0.4px;
+    }
+    .poster-card .meta p {
+      font-size: 14px; color: var(--ink-2);
+      line-height: 1.5; margin: 8px 0 0 0;
+    }
+    .poster-card .actions {
+      display: flex; gap: 10px;
+    }
+    .poster-card .actions .a {
+      flex: 1;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 13px;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .poster-card .actions .a.primary {
+      background: var(--green); color: white;
+    }
+    .poster-card:nth-child(2) .actions .a.primary {
+      background: var(--navy);
+    }
+    .poster-card .actions .a.primary:hover { filter: brightness(1.1); }
+    .poster-card .actions .a.ghost {
+      background: var(--green-soft); color: var(--green-d);
+    }
+    .poster-card:nth-child(2) .actions .a.ghost {
+      background: var(--navy-soft); color: var(--navy);
+    }
+
+    /* DEMO LINKS */
+    .demos {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .demo {
+      padding: 18px 20px;
+      border: 1px solid var(--hair);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 14px;
+      transition: border-color 0.15s, background 0.15s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .demo:hover {
+      border-color: var(--green);
+      background: var(--green-soft);
+    }
+    .demo .left .lbl {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 10px;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .demo .left .name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 16px;
+      margin-top: 4px;
+    }
+    .demo .left .url {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+      font-family: 'JetBrains Mono', monospace;
+      word-break: break-all;
+    }
+    .demo .arr {
+      font-size: 22px; color: var(--green); font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* TEAM */
+    .team-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .member {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .member .av {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--green-d));
+      color: white;
+      margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 28px;
+    }
+    .member:nth-child(2) .av { background: linear-gradient(135deg, var(--amber), #92400e); }
+    .member:nth-child(3) .av { background: linear-gradient(135deg, var(--navy), #1e40af); }
+    .member .role {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 10px;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--green);
+      margin-top: 16px;
+    }
+    .member .name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 18px;
+      margin-top: 6px;
+    }
+    .member .id {
+      font-size: 12px; color: var(--muted); margin-top: 4px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: rgba(255,255,255,0.85);
+      padding: 60px 0 40px;
+      margin-top: 80px;
+      position: relative;
+    }
+    footer::before {
+      content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--amber));
+    }
+    footer .row {
+      display: grid; grid-template-columns: 1.5fr 1fr;
+      gap: 40px; align-items: center;
+    }
+    footer .ack .lbl {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 10px;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    footer .ack p {
+      font-size: 14px; line-height: 1.55;
+      margin: 12px 0 0 0;
+    }
+    footer .stamp {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 12px;
+    }
+    footer .stamp img { width: 56px; height: 56px; object-fit: contain; }
+    footer .stamp .t .top {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 10px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.65);
+    }
+    footer .stamp .t .bot {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 17px;
+      color: #34d399; margin-top: 4px;
+    }
+    footer .small {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .stats, .posters, .demos, .team-grid, footer .row {
+        grid-template-columns: 1fr;
+      }
+      .section-h { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .section-h .desc { text-align: left; margin-left: 0; max-width: 100%; }
+      .stats { margin-top: -40px; }
+      .nav .links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <nav class="nav">
+        <div class="brand">
+          <img src="npi-logo.png" alt="NPIUB" />
+          <div>
+            <div class="name">NPI UNIVERSITY OF BANGLADESH</div>
+            <div class="dept">Department of Computer Science &amp; Engineering</div>
+          </div>
+        </div>
+        <div class="links">
+          <a href="#posters">Posters</a>
+          <a href="#demo">Live Demo</a>
+          <a href="#team">Team</a>
+          <a href="README.md">Docs</a>
+        </div>
+      </nav>
+
+      <div class="hero-body">
+        <div class="eyebrow">FINAL YEAR PROJECT · NPIUB FAIR 2026</div>
+        <h1>UNI<span class="accent">BUS</span> LIVE</h1>
+        <p class="tagline">
+          A production-grade, real-time university bus tracking platform —
+          passenger app, driver app, web admin, and GPS hardware unified
+          into one bilingual system. Live positions, smart pre-trip
+          visibility, and stop-arrival push alerts.
+        </p>
+        <div class="ctas">
+          <a class="btn primary" href="#posters">View Posters</a>
+          <a class="btn ghost" href="README.md">Read Documentation</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat">
+        <div class="num">&lt; 2s</div>
+        <div class="lbl">Live update latency</div>
+        <div class="sub">Socket.IO + polling fallback</div>
+      </div>
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="lbl">Platforms unified</div>
+        <div class="sub">Passenger · Driver · Admin Web</div>
+      </div>
+      <div class="stat">
+        <div class="num">2</div>
+        <div class="lbl">Languages built-in</div>
+        <div class="sub">English &amp; বাংলা</div>
+      </div>
+      <div class="stat">
+        <div class="num">60m</div>
+        <div class="lbl">Pre-trip visibility</div>
+        <div class="sub">See bus before it departs</div>
+      </div>
+    </div>
+
+    <!-- POSTERS -->
+    <section id="posters">
+      <div class="section-h">
+        <div>
+          <div class="num">01 · Showcase</div>
+          <h2>Project Posters</h2>
+        </div>
+        <div class="desc">
+          Two 20 × 30 inch portrait posters built for the NPIUB Project Fair 2026.
+          Open either to view full-size, or print directly to PDF.
+        </div>
+      </div>
+
+      <div class="posters">
+        <a class="poster-card" href="poster-1-full-project.html">
+          <div class="preview">
+            <span class="badge">Full Overview</span>
+            <h3>UNI<span class="acc">BUS</span><br/>LIVE</h3>
+            <div class="sub">End-to-end platform · 10 sections · architecture diagram · admin dashboard</div>
+          </div>
+          <div class="meta">
+            <div class="lbl">Poster 01</div>
+            <h4>Full Project Overview</h4>
+            <p>Passenger app + driver app + admin web + GPS hardware, all unified. Architecture, methodology, admin dashboard, deployment, pilot validation.</p>
+          </div>
+          <div class="actions">
+            <span class="a primary">Open Poster →</span>
+            <span class="a ghost">Print PDF</span>
+          </div>
+        </a>
+
+        <a class="poster-card" href="poster-2-app-overview.html">
+          <div class="preview">
+            <span class="badge">Mobile App</span>
+            <h3>UNI<span class="acc">BUS</span><br/>LIVE</h3>
+            <div class="sub">The passenger app · 5-screen gallery · user journey · features</div>
+          </div>
+          <div class="meta">
+            <div class="lbl">Poster 02</div>
+            <h4>Mobile App Overview</h4>
+            <p>The passenger app in detail — React Native + Expo codebase, real-time map, pre-trip phases, stop alerts, bilingual UX, accessibility.</p>
+          </div>
+          <div class="actions">
+            <span class="a primary">Open Poster →</span>
+            <span class="a ghost">Print PDF</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- LIVE DEMO -->
+    <section id="demo">
+      <div class="section-h">
+        <div>
+          <div class="num">02 · Live</div>
+          <h2>Try the Platform</h2>
+        </div>
+        <div class="desc">
+          Every layer is deployed and accessible. Try the admin console,
+          API, or grab an APK below.
+        </div>
+      </div>
+
+      <div class="demos">
+        <a class="demo" href="https://bus-tracking-frontend-woad.vercel.app" target="_blank" rel="noopener">
+          <div class="left">
+            <div class="lbl">Web Admin Console</div>
+            <div class="name">Admin Dashboard</div>
+            <div class="url">bus-tracking-frontend-woad.vercel.app</div>
+          </div>
+          <div class="arr">→</div>
+        </a>
+        <a class="demo" href="https://api.nrtechvps.com" target="_blank" rel="noopener">
+          <div class="left">
+            <div class="lbl">Backend API</div>
+            <div class="name">Realtime Engine</div>
+            <div class="url">api.nrtechvps.com</div>
+          </div>
+          <div class="arr">→</div>
+        </a>
+        <a class="demo" href="#" target="_blank" rel="noopener">
+          <div class="left">
+            <div class="lbl">Android Passenger</div>
+            <div class="name">Download Passenger APK</div>
+            <div class="url">EAS Build · arm64 · v1.0.6</div>
+          </div>
+          <div class="arr">↓</div>
+        </a>
+        <a class="demo" href="#" target="_blank" rel="noopener">
+          <div class="left">
+            <div class="lbl">Android Driver</div>
+            <div class="name">Download Driver APK</div>
+            <div class="url">EAS Build · arm64 · v1.0.6</div>
+          </div>
+          <div class="arr">↓</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team">
+      <div class="section-h">
+        <div>
+          <div class="num">03 · The Team</div>
+          <h2>Team Route-X</h2>
+        </div>
+        <div class="desc">
+          Three-member team under the supervision of [Supervisor Name],
+          Department of CSE, NPI University of Bangladesh.
+        </div>
+      </div>
+
+      <div class="team-grid">
+        <div class="member">
+          <div class="av">SH</div>
+          <div class="role">Project Lead</div>
+          <div class="name">Md. Shishir Hossain</div>
+          <div class="id">ID 0000 · Batch 00</div>
+        </div>
+        <div class="member">
+          <div class="av">M2</div>
+          <div class="role">Member</div>
+          <div class="name">[Member Two]</div>
+          <div class="id">ID 0000 · Batch 00</div>
+        </div>
+        <div class="member">
+          <div class="av">M3</div>
+          <div class="role">Member</div>
+          <div class="name">[Member Three]</div>
+          <div class="id">ID 0000 · Batch 00</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <div class="ack">
+          <div class="lbl">Acknowledgement</div>
+          <p>
+            We sincerely thank our supervisor and the Department of Computer
+            Science &amp; Engineering, NPI University of Bangladesh, for guidance,
+            infrastructure support, and the opportunity to build and pilot a
+            real production-grade transport platform — and to the pilot-batch
+            students who shaped its final design.
+          </p>
+        </div>
+        <div class="stamp">
+          <img src="npi-logo.png" alt="NPIUB" />
+          <div class="t">
+            <div class="top">PRESENTED AT</div>
+            <div class="bot">NPIUB · 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="small">
+        Built for NPIUB Project Fair 2026 · Source on
+        <a href="README.md" style="color: rgba(255,255,255,0.8);">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

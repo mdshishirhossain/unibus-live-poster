@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UniBus Live — Mobile App Poster (v4 · Polished Bold)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       POSTER 2 · MOBILE APP OVERVIEW · v4 (refined v2 polish)
+       ============================================================ */
+    @page { size: 20in 30in; margin: 0; }
+
+    :root {
+      --bg:        #f9fafb;
+      --card:      #ffffff;
+      --soft-bg:   #f3f4f6;
+
+      --ink:       #0f172a;
+      --ink-2:     #334155;
+      --muted:     #64748b;
+      --hair:      #e2e8f0;
+
+      --green:     #047857;
+      --green-d:   #065f46;
+      --green-soft:#ecfdf5;
+
+      --amber:     #b45309;
+      --amber-d:   #92400e;
+      --amber-soft:#fef3c7;
+
+      --ruby:      #be123c;
+      --ruby-d:    #9f1239;
+      --ruby-soft: #ffe4e6;
+
+      --navy:      #1e3a8a;
+      --navy-d:    #1e40af;
+      --navy-soft: #dbeafe;
+
+      --shadow-sm: 0 2px 8px -2px rgba(15, 23, 42, 0.08);
+      --shadow:    0 12px 28px -16px rgba(15, 23, 42, 0.22);
+      --shadow-lg: 0 28px 52px -22px rgba(15, 23, 42, 0.32);
+    }
+
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { margin: 0; padding: 0; background: #d4d6dc; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.005em;
+    }
+
+    .poster {
+      width: 20in;
+      min-height: 30in;
+      background: var(--bg);
+      margin: 0 auto;
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 1.2in 0.9in 0.55in;
+      background:
+        radial-gradient(ellipse at 12% 12%, rgba(30, 58, 138, 0.42), transparent 52%),
+        radial-gradient(ellipse at 88% 88%, rgba(180, 83, 9, 0.30), transparent 55%),
+        linear-gradient(135deg, #0a1325 0%, #0f172a 50%, #131f3d 100%);
+      color: white;
+    }
+    .hero::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: -1pt; height: 1pt;
+      background: linear-gradient(90deg, var(--navy), var(--green), var(--amber));
+    }
+    .hero-top { display: flex; align-items: center; justify-content: space-between; gap: 0.4in; }
+    .hero-top .uni { display: flex; align-items: center; gap: 0.2in; }
+    .hero-top .uni img {
+      width: 1.05in; height: 1.05in; object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.45));
+    }
+    .hero-top .uni .text { line-height: 1.15; }
+    .hero-top .uni .text .name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 20pt; color: white;
+    }
+    .hero-top .uni .text .dept { font-size: 13pt; margin-top: 4pt; color: rgba(255,255,255,0.72); }
+    .hero-top .event {
+      text-align: right;
+      padding: 9pt 16pt;
+      background: rgba(255,255,255,0.05);
+      border: 1pt solid rgba(255,255,255,0.14);
+      border-radius: 10pt;
+    }
+    .hero-top .event .eyebrow {
+      font-size: 9pt; color: rgba(255,255,255,0.65);
+      letter-spacing: 4.5px; font-weight: 700;
+    }
+    .hero-top .event .name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16pt; font-weight: 800; color: white; margin-top: 4pt;
+    }
+
+    .hero-title { margin-top: 0.42in; }
+    .hero-title .eyebrow {
+      display: inline-flex; align-items: center; gap: 12pt;
+      padding: 6pt 16pt;
+      background: rgba(30, 58, 138, 0.28);
+      border: 1pt solid rgba(96, 165, 250, 0.5);
+      color: #93c5fd;
+      font-size: 11pt; letter-spacing: 5px; font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 999pt;
+    }
+    .hero-title h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 86pt; line-height: 0.93;
+      font-weight: 800;
+      margin: 18pt 0 0 0;
+      letter-spacing: -2.2pt;
+      color: white;
+    }
+    .hero-title h1 .accent {
+      background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #0e7490 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-title .tagline {
+      margin-top: 18pt;
+      font-size: 21pt; font-weight: 500;
+      color: rgba(255,255,255,0.86);
+      max-width: 16in; line-height: 1.35;
+    }
+
+    /* STATS */
+    .stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0.18in; margin: 0 0.9in;
+      transform: translateY(-0.42in); z-index: 3; position: relative;
+    }
+    .stat {
+      background: var(--card); border-radius: 14pt;
+      padding: 0.22in 0.24in; box-shadow: var(--shadow-lg);
+      display: flex; flex-direction: column; gap: 4pt;
+      border-top: 5pt solid var(--navy);
+    }
+    .stat:nth-child(2) { border-top-color: var(--green); }
+    .stat:nth-child(3) { border-top-color: var(--amber); }
+    .stat:nth-child(4) { border-top-color: var(--navy); }
+    .stat .num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 46pt; font-weight: 800;
+      letter-spacing: -1.2pt; line-height: 1;
+    }
+    .stat:nth-child(1) .num { color: var(--navy-d); }
+    .stat:nth-child(2) .num { color: var(--green-d); }
+    .stat:nth-child(3) .num { color: var(--amber-d); }
+    .stat:nth-child(4) .num { color: var(--navy-d); }
+    .stat .lbl {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13pt; font-weight: 700; color: var(--ink);
+      margin-top: 6pt;
+    }
+    .stat .sub {
+      font-size: 11pt; color: var(--muted); margin-top: 2pt; line-height: 1.35;
+    }
+
+    /* TEAM STRIP */
+    .team-strip {
+      margin: 0 0.9in;
+      padding: 0.24in 0.3in;
+      background: var(--card);
+      border-radius: 14pt;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 0.3fr 2.6fr;
+      gap: 0.25in;
+      align-items: center;
+    }
+    .team-name {
+      display: flex; flex-direction: column;
+      padding-right: 0.2in;
+      border-right: 2pt solid var(--navy-soft);
+    }
+    .team-name .eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt; color: var(--muted); letter-spacing: 4px;
+      font-weight: 700; text-transform: uppercase;
+    }
+    .team-name .name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 30pt; font-weight: 900; color: var(--navy-d);
+      margin-top: 6pt; line-height: 1; letter-spacing: -0.8pt;
+    }
+    .members3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.18in; }
+    .member { display: flex; align-items: center; gap: 11pt; }
+    .member .av {
+      width: 0.58in; height: 0.58in; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--navy-d));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 17pt;
+      box-shadow: var(--shadow-sm);
+    }
+    .member:nth-child(2) .av { background: linear-gradient(135deg, var(--green), var(--green-d)); }
+    .member:nth-child(3) .av { background: linear-gradient(135deg, var(--amber), var(--amber-d)); }
+    .member .meta .n {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 14pt; color: var(--ink);
+    }
+    .member .meta .id {
+      font-size: 11pt; color: var(--muted); margin-top: 2pt;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .super {
+      grid-column: 1 / -1;
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 14pt; margin-top: 4pt;
+      border-top: 1pt dashed var(--hair);
+    }
+    .super .label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 10pt; color: var(--muted); letter-spacing: 3px;
+      font-weight: 700; text-transform: uppercase;
+    }
+    .super .name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17pt; font-weight: 800; color: var(--ink);
+    }
+
+    /* SCREENSHOT GALLERY */
+    .gallery {
+      margin: 0.22in 0.9in 0;
+      padding: 0.24in 0.28in;
+      background: var(--card);
+      border-radius: 16pt;
+      box-shadow: var(--shadow);
+      border-top: 4pt solid var(--navy);
+    }
+    .gallery .header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 14pt;
+    }
+    .gallery .header .left { display: flex; align-items: center; gap: 14pt; }
+    .gallery .header .iconbox {
+      width: 40pt; height: 40pt; border-radius: 10pt;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--navy-soft); color: var(--navy);
+    }
+    .gallery .header .iconbox svg { width: 22pt; height: 22pt; }
+    .gallery .header .text .eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9.5pt; letter-spacing: 4px; font-weight: 700;
+      color: var(--muted); text-transform: uppercase;
+    }
+    .gallery .header .text h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 24pt; font-weight: 800; color: var(--ink);
+      margin: 5pt 0 0 0; letter-spacing: -0.5pt;
+    }
+    .gallery .header .right .badge {
+      padding: 6pt 14pt; border-radius: 999pt;
+      background: var(--green-soft); color: var(--green-d);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 10pt; font-weight: 800; letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .gallery .strip {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.18in;
+    }
+    .shot {
+      aspect-ratio: 9 / 19;
+      border-radius: 18pt;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      padding: 6pt;
+      box-shadow: var(--shadow-lg);
+      position: relative; overflow: hidden;
+    }
+    .shot .frame {
+      width: 100%; height: 100%;
+      border-radius: 14pt;
+      background: #0e1426;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .shot .frame img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .shot .placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: #94a3b8; gap: 6pt; pointer-events: none;
+    }
+    .shot .placeholder .name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 12pt; color: #cbd5e1;
+    }
+    .shot .placeholder .hint { font-size: 9pt; color: #64748b; padding: 0 6pt; text-align: center; }
+    .shot .label {
+      position: absolute; bottom: 14pt; left: 50%; transform: translateX(-50%);
+      padding: 3pt 9pt; border-radius: 999pt;
+      background: rgba(255,255,255,0.92);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt; font-weight: 800; color: var(--ink);
+      letter-spacing: 1px; text-transform: uppercase;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* MAIN BODY */
+    .body {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.32in;
+      padding: 0.3in 0.9in 0;
+    }
+    .col { display: flex; flex-direction: column; gap: 0.22in; }
+    .card {
+      background: var(--card); border-radius: 16pt;
+      padding: 0.28in 0.32in; box-shadow: var(--shadow);
+      position: relative;
+    }
+    .card.accent-g { border-top: 4pt solid var(--green); }
+    .card.accent-a { border-top: 4pt solid var(--amber); }
+    .card.accent-n { border-top: 4pt solid var(--navy); }
+
+    .sec-h { display: flex; align-items: center; gap: 14pt; margin: 0 0 16pt 0; }
+    .sec-h .iconbox {
+      width: 40pt; height: 40pt; border-radius: 10pt;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--navy-soft); color: var(--navy); flex-shrink: 0;
+    }
+    .sec-h .iconbox.g { background: var(--green-soft); color: var(--green); }
+    .sec-h .iconbox.a { background: var(--amber-soft); color: var(--amber); }
+    .sec-h .iconbox svg { width: 22pt; height: 22pt; }
+    .sec-h .text .eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9.5pt; letter-spacing: 4px; font-weight: 700;
+      color: var(--muted); text-transform: uppercase;
+    }
+    .sec-h .text h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 24pt; font-weight: 800; color: var(--ink);
+      margin: 5pt 0 0 0; letter-spacing: -0.5pt;
+    }
+
+    .body-text { font-size: 15pt; line-height: 1.5; color: var(--ink-2); margin: 0; }
+    .body-text strong { color: var(--ink); font-weight: 700; }
+    ul.list { margin: 0; padding: 0; list-style: none; }
+    ul.list li {
+      font-size: 14.5pt; line-height: 1.45;
+      color: var(--ink-2);
+      padding: 7pt 0 7pt 24pt; position: relative;
+    }
+    ul.list li::before {
+      content: ""; position: absolute; left: 0; top: 14pt;
+      width: 12pt; height: 12pt; border-radius: 50%;
+      background: var(--navy-soft); border: 2pt solid var(--navy);
+    }
+    ul.list.g li::before { background: var(--green-soft); border-color: var(--green); }
+    ul.list.a li::before { background: var(--amber-soft); border-color: var(--amber); }
+    ul.list li strong { color: var(--ink); font-weight: 700; }
+
+    /* Problem callout */
+    .problem {
+      background: linear-gradient(135deg, var(--ruby-soft) 0%, #fff7ed 100%);
+      border: 2pt solid var(--ruby); border-radius: 14pt;
+      padding: 0.24in 0.28in; box-shadow: var(--shadow-sm);
+      position: relative; overflow: hidden;
+    }
+    .problem::before {
+      content: ""; position: absolute; right: -0.5in; top: -0.5in;
+      width: 2in; height: 2in;
+      background: radial-gradient(circle, rgba(190, 18, 60, 0.16), transparent 70%);
+    }
+    .problem .badge {
+      display: inline-flex; align-items: center; gap: 6pt;
+      padding: 4pt 12pt; border-radius: 999pt;
+      background: var(--ruby); color: white;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt; font-weight: 800; letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .problem h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 23pt; font-weight: 800; color: var(--ruby-d);
+      margin: 10pt 0 8pt 0; letter-spacing: -0.4pt;
+    }
+    .problem ul.list li::before { background: white; border-color: var(--ruby); }
+
+    /* Tech */
+    .tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10pt; }
+    .tech {
+      display: flex; align-items: center; gap: 10pt;
+      padding: 11pt 13pt;
+      background: white;
+      border: 1pt solid var(--hair);
+      border-radius: 10pt;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13pt; font-weight: 600; color: var(--ink);
+    }
+    .tech .ic {
+      width: 24pt; height: 24pt; border-radius: 7pt;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: white;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 11pt;
+    }
+    .tech .ic.g { background: var(--green); }
+    .tech .ic.a { background: var(--amber); }
+    .tech .ic.n { background: var(--navy); }
+    .tech .ic.k { background: var(--ink); }
+
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 8pt; }
+    .step {
+      display: grid; grid-template-columns: 0.52in 1fr; gap: 14pt;
+      align-items: flex-start; padding: 10pt 0; position: relative;
+    }
+    .step:not(:last-child)::after {
+      content: ""; position: absolute;
+      left: 0.26in; top: 0.6in; bottom: -2pt;
+      width: 2pt; background: var(--navy-soft);
+    }
+    .step .num {
+      width: 0.52in; height: 0.52in; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--navy-d));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900; font-size: 19pt;
+      box-shadow: var(--shadow-sm); z-index: 1;
+    }
+    .step .desc { padding-top: 6pt; }
+    .step .desc .t {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 16pt; color: var(--ink);
+      letter-spacing: -0.2pt;
+    }
+    .step .desc .d { font-size: 13pt; color: var(--ink-2); margin-top: 3pt; line-height: 1.4; }
+
+    /* Features */
+    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10pt; }
+    .feature {
+      padding: 11pt 13pt;
+      background: white;
+      border: 1pt solid var(--hair);
+      border-left: 3pt solid var(--green);
+      border-radius: 8pt;
+    }
+    .feature:nth-child(2n) { border-left-color: var(--navy); }
+    .feature .t {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 14pt; color: var(--ink);
+      letter-spacing: -0.2pt;
+    }
+    .feature .d {
+      font-size: 11.5pt; color: var(--muted); margin-top: 3pt; line-height: 1.4;
+    }
+
+    /* Future */
+    .future { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10pt; }
+    .future .item {
+      padding: 13pt 15pt;
+      background: linear-gradient(135deg, var(--navy-soft) 0%, white 100%);
+      border-radius: 10pt; border: 1pt solid #bfdbfe;
+    }
+    .future .item:nth-child(2) {
+      background: linear-gradient(135deg, var(--green-soft) 0%, white 100%);
+      border-color: #a7f3d0;
+    }
+    .future .item:nth-child(3) {
+      background: linear-gradient(135deg, var(--amber-soft) 0%, white 100%);
+      border-color: #fcd34d;
+    }
+    .future .item:nth-child(4) {
+      background: linear-gradient(135deg, var(--ruby-soft) 0%, white 100%);
+      border-color: #fda4af;
+    }
+    .future .item .t {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 13.5pt; color: var(--ink);
+    }
+    .future .item .d {
+      font-size: 11.5pt; color: var(--ink-2); margin-top: 3pt; line-height: 1.4;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin: 0.15in 0.9in 0.9in;
+      padding: 0.24in 0.3in;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white; border-radius: 14pt;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 0.3in; align-items: center;
+      box-shadow: var(--shadow-lg);
+      position: relative; overflow: hidden;
+    }
+    /* Stretch body grid cells equally so columns end at same height */
+    .body { align-items: start; }
+    .col { align-self: stretch; }
+    .footer::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5pt;
+      background: linear-gradient(180deg, var(--navy), var(--green), var(--amber));
+    }
+    .footer .thanks { padding-left: 10pt; }
+    .footer .thanks .eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt; letter-spacing: 4px; font-weight: 700;
+      color: rgba(255,255,255,0.6); text-transform: uppercase;
+    }
+    .footer .thanks .body {
+      font-size: 14pt; line-height: 1.45;
+      color: rgba(255,255,255,0.92); margin-top: 8pt;
+    }
+    .footer .stamp {
+      display: flex; align-items: center; gap: 12pt;
+      padding: 11pt 15pt;
+      background: rgba(255,255,255,0.05);
+      border: 1pt solid rgba(255,255,255,0.16);
+      border-radius: 10pt;
+    }
+    .footer .stamp img { width: 0.62in; height: 0.62in; object-fit: contain; }
+    .footer .stamp .t .top {
+      font-size: 10pt; letter-spacing: 2px;
+      color: rgba(255,255,255,0.65);
+    }
+    .footer .stamp .t .bot {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17pt; font-weight: 800; color: #60a5fa;
+      letter-spacing: -0.2pt;
+    }
+  </style>
+</head>
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+    </symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+    </symbol>
+    <symbol id="i-stack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+    </symbol>
+    <symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/>
+      <path d="M6 16V8a4 4 0 0 1 8 0v8a4 4 0 0 0 8 0V8"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="i-acc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+    </symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+      <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+    </symbol>
+  </svg>
+
+  <div class="poster">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-top">
+        <div class="uni">
+          <img src="npi-logo.png" alt="NPIUB" />
+          <div class="text">
+            <div class="name">NPI UNIVERSITY OF BANGLADESH</div>
+            <div class="dept">Department of Computer Science &amp; Engineering</div>
+          </div>
+        </div>
+        <div class="event">
+          <div class="eyebrow">FINAL YEAR PROJECT</div>
+          <div class="name">NPIUB Project Fair 2026</div>
+        </div>
+      </div>
+      <div class="hero-title">
+        <div class="eyebrow">MOBILE APP SHOWCASE</div>
+        <h1>UNI<span class="accent">BUS</span> LIVE</h1>
+        <div class="tagline">
+          The passenger mobile app — built with React Native + Expo for a
+          single Android (and soon iOS) experience. Live map, pre-trip phases,
+          stop alerts, multi-day schedules, and full বাংলা support.
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat">
+        <div class="num">1</div>
+        <div class="lbl">Codebase</div>
+        <div class="sub">React Native · Android + iOS-ready</div>
+      </div>
+      <div class="stat">
+        <div class="num">2</div>
+        <div class="lbl">Languages</div>
+        <div class="sub">English · বাংলা everywhere</div>
+      </div>
+      <div class="stat">
+        <div class="num">12+</div>
+        <div class="lbl">Key features</div>
+        <div class="sub">Live · Alerts · Schedules · History</div>
+      </div>
+      <div class="stat">
+        <div class="num">∞</div>
+        <div class="lbl">Refreshes / hour</div>
+        <div class="sub">Real-time push, no manual reload</div>
+      </div>
+    </div>
+
+    <!-- TEAM STRIP -->
+    <div class="team-strip">
+      <div class="team-name">
+        <div class="eyebrow">Team</div>
+        <div class="name">ROUTE-X</div>
+      </div>
+      <div></div>
+      <div class="members3">
+        <div class="member">
+          <div class="av">SH</div>
+          <div class="meta">
+            <div class="n">Md. Shishir Hossain</div>
+            <div class="id">ID: 0000 · Batch 00</div>
+          </div>
+        </div>
+        <div class="member">
+          <div class="av">M2</div>
+          <div class="meta">
+            <div class="n">[Member Two]</div>
+            <div class="id">ID: 0000 · Batch 00</div>
+          </div>
+        </div>
+        <div class="member">
+          <div class="av">M3</div>
+          <div class="meta">
+            <div class="n">[Member Three]</div>
+            <div class="id">ID: 0000 · Batch 00</div>
+          </div>
+        </div>
+      </div>
+      <div class="super">
+        <span class="label">Supervisor</span>
+        <span class="name">[Supervisor Name], [Designation]</span>
+      </div>
+    </div>
+
+    <!-- SCREENSHOT GALLERY -->
+    <div class="gallery">
+      <div class="header">
+        <div class="left">
+          <div class="iconbox"><svg><use href="#i-phone"/></svg></div>
+          <div class="text">
+            <div class="eyebrow">In your hand</div>
+            <h2>The app in action</h2>
+          </div>
+        </div>
+        <div class="right">
+          <div class="badge">5 KEY SCREENS</div>
+        </div>
+      </div>
+      <div class="strip">
+        <div class="shot">
+          <div class="frame">
+            <img src="screenshots/live.png" alt="Live map" onerror="this.style.display='none'"/>
+            <div class="placeholder">
+              <div class="name">LIVE MAP</div>
+              <div class="hint">Drop screenshot here</div>
+            </div>
+            <div class="label">Live Map</div>
+          </div>
+        </div>
+        <div class="shot">
+          <div class="frame">
+            <img src="screenshots/schedules.png" alt="Today's schedules" onerror="this.style.display='none'"/>
+            <div class="placeholder">
+              <div class="name">SCHEDULES</div>
+              <div class="hint">Today / Tomorrow / All</div>
+            </div>
+            <div class="label">Schedules</div>
+          </div>
+        </div>
+        <div class="shot">
+          <div class="frame">
+            <img src="screenshots/stops.png" alt="Stop timeline" onerror="this.style.display='none'"/>
+            <div class="placeholder">
+              <div class="name">STOPS</div>
+              <div class="hint">Passed · Next · Yours</div>
+            </div>
+            <div class="label">Stop Timeline</div>
+          </div>
+        </div>
+        <div class="shot">
+          <div class="frame">
+            <img src="screenshots/notifications.png" alt="Notifications" onerror="this.style.display='none'"/>
+            <div class="placeholder">
+              <div class="name">ALERTS</div>
+              <div class="hint">System push</div>
+            </div>
+            <div class="label">Alerts</div>
+          </div>
+        </div>
+        <div class="shot">
+          <div class="frame">
+            <img src="screenshots/profile.png" alt="Profile" onerror="this.style.display='none'"/>
+            <div class="placeholder">
+              <div class="name">PROFILE</div>
+              <div class="hint">Language · Devices</div>
+            </div>
+            <div class="label">Profile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="body">
+
+      <!-- LEFT COLUMN -->
+      <div class="col">
+
+        <div class="card accent-n">
+          <div class="sec-h">
+            <div class="iconbox"><svg><use href="#i-info"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">01 · About</div>
+              <h2>Introduction</h2>
+            </div>
+          </div>
+          <p class="body-text">
+            UniBus Live's passenger app is built on <strong>React Native</strong>
+            with <strong>Expo SDK 56</strong> — one JavaScript codebase that
+            runs on Android today and is iOS-ready with no rewrite. The result
+            is a polished, real-time, bilingual app that puts the bus in
+            every student's pocket.
+          </p>
+        </div>
+
+        <div class="card accent-g">
+          <div class="sec-h">
+            <div class="iconbox g"><svg><use href="#i-target"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">02 · Goals</div>
+              <h2>Objectives</h2>
+            </div>
+          </div>
+          <ul class="list g">
+            <li>Open the app → see your bus on a live map in under <strong>3 seconds</strong></li>
+            <li>Pre-trip view: know the bus is on its way <strong>before</strong> it departs</li>
+            <li><strong>Push alerts</strong> when bus is near your subscribed stop</li>
+            <li>Plan ahead: see today's, tomorrow's, and all-week schedules</li>
+            <li>Full English + বাংলা (Bengali) toggle on every screen</li>
+          </ul>
+        </div>
+
+        <div class="problem">
+          <div class="badge">Problem</div>
+          <h3>Wait time you can't predict.</h3>
+          <ul class="list">
+            <li>Students wait blindly — no idea when the bus will arrive</li>
+            <li>Existing transport WhatsApp groups deliver stale, fragmented info</li>
+            <li>No way to plan classes, breaks, or commutes around bus timing</li>
+            <li>Language barrier — most transit apps are English-only</li>
+          </ul>
+        </div>
+
+        <div class="card accent-a">
+          <div class="sec-h">
+            <div class="iconbox a"><svg><use href="#i-stack"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">03 · Stack</div>
+              <h2>Mobile Tech</h2>
+            </div>
+          </div>
+          <div class="tech-grid">
+            <div class="tech"><div class="ic a">R</div>React Native 0.85</div>
+            <div class="tech"><div class="ic a">E</div>Expo SDK 56</div>
+            <div class="tech"><div class="ic k">H</div>Hermes JS Engine</div>
+            <div class="tech"><div class="ic n">S</div>Socket.IO client</div>
+            <div class="tech"><div class="ic g">G</div>Google Maps SDK</div>
+            <div class="tech"><div class="ic a">N</div>Expo Notifications</div>
+            <div class="tech"><div class="ic g">L</div>Expo Location (BG)</div>
+            <div class="tech"><div class="ic g">B</div>EAS Build + ProGuard</div>
+          </div>
+        </div>
+
+        <!-- Design Principles -->
+        <div class="card accent-g">
+          <div class="sec-h">
+            <div class="iconbox g"><svg><use href="#i-check"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">04 · Principles</div>
+              <h2>Design Principles</h2>
+            </div>
+          </div>
+          <p class="body-text" style="margin-bottom: 12pt;">
+            Five decisions shaped every screen — chosen before code was
+            written and held to throughout the build.
+          </p>
+          <ul class="list g">
+            <li><strong>Real-time first.</strong> No manual reloads — Socket.IO + polling fallback.</li>
+            <li><strong>Bilingual from day one.</strong> Every string typed and translated.</li>
+            <li><strong>Native-feel performance.</strong> Hermes AOT compile · ProGuard · arm64-only APK.</li>
+            <li><strong>Battery-aware GPS.</strong> Driver app uses foreground service; passenger uses balanced mode.</li>
+            <li><strong>Accessible by default.</strong> WCAG-style hit targets · Reduce Motion · screen reader labels.</li>
+          </ul>
+        </div>
+
+        <!-- App Highlights -->
+        <div class="card accent-a">
+          <div class="sec-h">
+            <div class="iconbox a"><svg><use href="#i-target"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">05 · Highlights</div>
+              <h2>App Highlights</h2>
+            </div>
+          </div>
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="t">~ 50 MB APK</div>
+              <div class="d">arm64 only · shrunk via ProGuard + ABI split</div>
+            </div>
+            <div class="feature">
+              <div class="t">&lt; 3s cold start</div>
+              <div class="d">Hermes AOT compile · lazy-loaded screens</div>
+            </div>
+            <div class="feature">
+              <div class="t">17 i18n keys / screen</div>
+              <div class="d">Type-safe map · missing keys are a build error</div>
+            </div>
+            <div class="feature">
+              <div class="t">Foreground bus marker</div>
+              <div class="d">Smooth interpolated · heading-aware</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="col">
+
+        <div class="card accent-n">
+          <div class="sec-h">
+            <div class="iconbox"><svg><use href="#i-route"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">06 · Flow</div>
+              <h2>User Journey</h2>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="step">
+              <div class="num">1</div>
+              <div class="desc">
+                <div class="t">Open + choose language</div>
+                <div class="d">Onboarding screens · English / বাংলা stored</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <div class="desc">
+                <div class="t">Sign in or register (OTP)</div>
+                <div class="d">Email-OTP verification + admin approval flow</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <div class="desc">
+                <div class="t">Live trip loads instantly</div>
+                <div class="d">Map · ETA · stop progression visible right away</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">4</div>
+              <div class="desc">
+                <div class="t">Subscribe to your stop</div>
+                <div class="d">Bell icon · quiet hours respected</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">5</div>
+              <div class="desc">
+                <div class="t">Push alert before arrival</div>
+                <div class="d">"Bus is 5 min from Agargaon" — closed app too</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">6</div>
+              <div class="desc">
+                <div class="t">Trip auto-logs to history</div>
+                <div class="d">Last 30 days · streak count · top routes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card accent-g">
+          <div class="sec-h">
+            <div class="iconbox g"><svg><use href="#i-check"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">07 · Features</div>
+              <h2>Key Features</h2>
+            </div>
+          </div>
+          <div class="feature-grid">
+            <div class="feature"><div class="t">Live Map + ETA</div><div class="d">Smooth marker animation with heading</div></div>
+            <div class="feature"><div class="t">Pre-trip Phases</div><div class="d">Depot · Approaching · At Origin</div></div>
+            <div class="feature"><div class="t">Hybrid + Traffic Layer</div><div class="d">Satellite view + Google traffic overlay</div></div>
+            <div class="feature"><div class="t">Stop Subscriptions</div><div class="d">Push alerts · quiet hours</div></div>
+            <div class="feature"><div class="t">Multi-day Schedules</div><div class="d">Today · Tomorrow · All days</div></div>
+            <div class="feature"><div class="t">Offline Tolerance</div><div class="d">Banner only when data truly stale</div></div>
+            <div class="feature"><div class="t">Trip History + Stats</div><div class="d">30-day routes &amp; streak count</div></div>
+            <div class="feature"><div class="t">Forgot Password</div><div class="d">3-step OTP recovery flow</div></div>
+          </div>
+        </div>
+
+        <div class="card accent-n">
+          <div class="sec-h">
+            <div class="iconbox"><svg><use href="#i-acc"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">08 · UX</div>
+              <h2>Accessibility &amp; Care</h2>
+            </div>
+          </div>
+          <ul class="list">
+            <li>44pt min hit targets · screen reader labels everywhere</li>
+            <li>"Reduce Motion" OS setting respected for animations</li>
+            <li>Password visibility toggle on every secure input</li>
+            <li>Notification channel created early — reliable system delivery</li>
+            <li>Connection pill never misleads when data is fresh</li>
+          </ul>
+        </div>
+
+        <div class="card accent-a">
+          <div class="sec-h">
+            <div class="iconbox a"><svg><use href="#i-rocket"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">09 · Future</div>
+              <h2>Roadmap</h2>
+            </div>
+          </div>
+          <div class="future">
+            <div class="item"><div class="t">iOS Build</div><div class="d">Same codebase, App Store distribution.</div></div>
+            <div class="item"><div class="t">Play Store</div><div class="d">Kill sideload friction · auto-updates.</div></div>
+            <div class="item"><div class="t">OTA Updates</div><div class="d">EAS Update for instant JS fixes.</div></div>
+            <div class="item"><div class="t">Wearable Companion</div><div class="d">Glance ETA on smartwatch.</div></div>
+          </div>
+        </div>
+
+        <!-- Pilot Validation -->
+        <div class="card accent-g">
+          <div class="sec-h">
+            <div class="iconbox g"><svg><use href="#i-check"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">10 · Validation</div>
+              <h2>Pilot &amp; Quality</h2>
+            </div>
+          </div>
+          <p class="body-text" style="margin-bottom: 12pt;">
+            Built, shipped, and tested with real students. Every release
+            passes a tight quality checklist before the APK URL goes out.
+          </p>
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="t">Real Pilot Cohort</div>
+              <div class="d">University students testing on actual routes</div>
+            </div>
+            <div class="feature">
+              <div class="t">Type-Safe Build</div>
+              <div class="d">Strict TypeScript · zero <em>any</em> in production paths</div>
+            </div>
+            <div class="feature">
+              <div class="t">Bilingual Verified</div>
+              <div class="d">Both EN and বাংলা confirmed on every screen</div>
+            </div>
+            <div class="feature">
+              <div class="t">Race-Condition Tested</div>
+              <div class="d">Offline → online · stale data · permission denied</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="thanks">
+        <div class="eyebrow">Acknowledgement</div>
+        <div class="body">
+          Our thanks to the Department of Computer Science &amp; Engineering,
+          NPI University of Bangladesh, and to our supervisor for guidance —
+          and to the pilot-batch students who tested the app on real campus
+          routes and shaped its final design.
+        </div>
+      </div>
+      <div class="stamp">
+        <img src="npi-logo.png" alt="NPIUB" />
+        <div class="t">
+          <div class="top">PRESENTED AT</div>
+          <div class="bot">NPIUB · 2026</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

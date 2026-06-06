@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UniBus Live — Full Project Poster (v4 · Polished Bold)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       POSTER 1 · FULL PROJECT OVERVIEW · NPIUB FAIR 2026
+       v4 — same bold structure as v2, refined professional palette:
+         Emerald primary · Warm amber secondary · Ruby (problem only)
+         Slate ink · Cleaner cream surface · More restrained shadows
+       ============================================================ */
+    @page { size: 20in 30in; margin: 0; }
+
+    :root {
+      /* Surface */
+      --bg:        #f9fafb;
+      --card:      #ffffff;
+      --soft-bg:   #f3f4f6;
+
+      /* Ink */
+      --ink:       #0f172a;
+      --ink-2:     #334155;
+      --muted:     #64748b;
+      --hair:      #e2e8f0;
+
+      /* Refined emerald — primary */
+      --green:     #047857;
+      --green-d:   #065f46;
+      --green-soft:#ecfdf5;
+
+      /* Warm amber — secondary */
+      --amber:     #b45309;
+      --amber-d:   #92400e;
+      --amber-soft:#fef3c7;
+
+      /* Refined ruby — problem callout only */
+      --ruby:      #be123c;
+      --ruby-d:    #9f1239;
+      --ruby-soft: #ffe4e6;
+
+      /* Refined navy — for architecture / blue variant */
+      --navy:      #1e3a8a;
+      --navy-d:    #1e40af;
+      --navy-soft: #dbeafe;
+
+      /* Shadows — subtle and refined */
+      --shadow-sm: 0 2px 8px -2px rgba(15, 23, 42, 0.08);
+      --shadow:    0 12px 28px -16px rgba(15, 23, 42, 0.22);
+      --shadow-lg: 0 28px 52px -22px rgba(15, 23, 42, 0.32);
+    }
+
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { margin: 0; padding: 0; background: #d4d6dc; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.005em;
+    }
+
+    .poster {
+      width: 20in;
+      min-height: 30in;
+      background: var(--bg);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* ============================================================
+       HERO — dark sophisticated band
+       ============================================================ */
+    .hero {
+      position: relative;
+      padding: 1.2in 0.9in 0.55in;
+      background:
+        radial-gradient(ellipse at 88% 12%, rgba(4, 120, 87, 0.34), transparent 52%),
+        radial-gradient(ellipse at 12% 88%, rgba(180, 83, 9, 0.28), transparent 55%),
+        linear-gradient(135deg, #0a1325 0%, #0f172a 50%, #131f3d 100%);
+      color: white;
+    }
+    .hero::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: -1pt; height: 1pt;
+      background: linear-gradient(90deg, var(--green), var(--amber), var(--green));
+    }
+
+    .hero-top {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 0.4in;
+    }
+    .hero-top .uni { display: flex; align-items: center; gap: 0.2in; }
+    .hero-top .uni img {
+      width: 1.05in; height: 1.05in; object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.45));
+    }
+    .hero-top .uni .text { line-height: 1.15; }
+    .hero-top .uni .text .name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 20pt;
+      letter-spacing: 0.3px; color: white;
+    }
+    .hero-top .uni .text .dept {
+      font-size: 13pt; margin-top: 4pt;
+      color: rgba(255,255,255,0.72);
+    }
+    .hero-top .event {
+      text-align: right;
+      padding: 9pt 16pt;
+      background: rgba(255,255,255,0.05);
+      border: 1pt solid rgba(255,255,255,0.14);
+      border-radius: 10pt;
+    }
+    .hero-top .event .eyebrow {
+      font-size: 9pt; color: rgba(255,255,255,0.65);
+      letter-spacing: 4.5px; font-weight: 700;
+    }
+    .hero-top .event .name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16pt; font-weight: 800; color: white;
+      margin-top: 4pt;
+    }
+
+    .hero-title { margin-top: 0.42in; }
+    .hero-title .eyebrow {
+      display: inline-flex; align-items: center; gap: 12pt;
+      padding: 6pt 16pt;
+      background: rgba(180, 83, 9, 0.18);
+      border: 1pt solid rgba(180, 83, 9, 0.4);
+      color: #fcd34d;
+      font-size: 11pt; letter-spacing: 5px; font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 999pt;
+    }
+    .hero-title h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 96pt; line-height: 0.93;
+      font-weight: 800;
+      margin: 18pt 0 0 0;
+      letter-spacing: -2.5pt;
+      color: white;
+    }
+    .hero-title h1 .accent {
+      background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #047857 100%);
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent;
+    }
+    .hero-title .tagline {
+      margin-top: 18pt;
+      font-size: 21pt; font-weight: 500;
+      color: rgba(255,255,255,0.86);
+      max-width: 16in; line-height: 1.35;
+    }
+
+    /* ============================================================
+       STAT STRIP — overlapping hero/body
+       ============================================================ */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.18in;
+      margin: 0 0.9in;
+      transform: translateY(-0.42in);
+      z-index: 3;
+      position: relative;
+    }
+    .stat {
+      background: var(--card);
+      border-radius: 14pt;
+      padding: 0.22in 0.24in;
+      box-shadow: var(--shadow-lg);
+      display: flex; flex-direction: column; gap: 4pt;
+      border-top: 5pt solid var(--green);
+      position: relative;
+    }
+    .stat:nth-child(2) { border-top-color: var(--amber); }
+    .stat:nth-child(3) { border-top-color: var(--green); }
+    .stat:nth-child(4) { border-top-color: var(--amber); }
+    .stat .num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 46pt; font-weight: 800;
+      letter-spacing: -1.2pt;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .stat:nth-child(2) .num,
+    .stat:nth-child(4) .num { color: var(--amber-d); }
+    .stat:nth-child(odd) .num { color: var(--green-d); }
+    .stat .lbl {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13pt; font-weight: 700; color: var(--ink);
+      letter-spacing: 0.2px; margin-top: 6pt;
+    }
+    .stat .sub {
+      font-size: 11pt; color: var(--muted); margin-top: 2pt; line-height: 1.35;
+    }
+
+    /* ============================================================
+       TEAM STRIP
+       ============================================================ */
+    .team-strip {
+      margin: 0 0.9in;
+      padding: 0.24in 0.3in;
+      background: var(--card);
+      border-radius: 14pt;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 0.3fr 2.6fr;
+      gap: 0.25in;
+      align-items: center;
+    }
+    .team-name {
+      display: flex; flex-direction: column;
+      padding-right: 0.2in;
+      border-right: 2pt solid var(--green-soft);
+    }
+    .team-name .eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt; color: var(--muted); letter-spacing: 4px;
+      font-weight: 700; text-transform: uppercase;
+    }
+    .team-name .name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 30pt; font-weight: 900; color: var(--green-d);
+      margin-top: 6pt; line-height: 1; letter-spacing: -0.8pt;
+    }
+    .members3 {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.18in;
+    }
+    .member { display: flex; align-items: center; gap: 11pt; }
+    .member .av {
+      width: 0.58in; height: 0.58in; border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--green-d));
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 17pt;
+      box-shadow: var(--shadow-sm);
+    }
+    .member:nth-child(2) .av { background: linear-gradient(135deg, var(--amber), var(--amber-d)); }
+    .member:nth-child(3) .av { background: linear-gradient(135deg, var(--navy), var(--navy-d)); }
+    .member .meta { line-height: 1.2; }
+    .member .meta .n {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 14pt; color: var(--ink);
+    }
+    .member .meta .id {
+      font-size: 11pt; color: var(--muted); margin-top: 2pt;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .super {
+      grid-column: 1 / -1;
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 14pt; margin-top: 4pt;
+      border-top: 1pt dashed var(--hair);
+    }
+    .super .label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 10pt; color: var(--muted); letter-spacing: 3px;
+      font-weight: 700; text-transform: uppercase;
+    }
+    .super .name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17pt; font-weight: 800; color: var(--ink);
+    }
+
+    /* ============================================================
+       BODY — 2 COLUMNS
+       ============================================================ */
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.32in;
+      padding: 0.3in 0.9in 0;
+    }
+    .col { display: flex; flex-direction: column; gap: 0.22in; }
+
+    .card {
+      background: var(--card);
+      border-radius: 16pt;
+      padding: 0.28in 0.32in;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .card.accent-g { border-top: 4pt solid var(--green); }
+    .card.accent-a { border-top: 4pt solid var(--amber); }
+    .card.accent-n { border-top: 4pt solid var(--navy); }
+
+    .sec-h {
+      display: flex; align-items: center; gap: 14pt;
+      margin: 0 0 16pt 0;
+    }
+    .sec-h .iconbox {
+      width: 40pt; height: 40pt; border-radius: 10pt;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--green-soft); color: var(--green);
+      flex-shrink: 0;
+    }
+    .sec-h .iconbox.a { background: var(--amber-soft); color: var(--amber); }
+    .sec-h .iconbox.n { background: var(--navy-soft);  color: var(--navy); }
+    .sec-h .iconbox svg { width: 22pt; height: 22pt; }
+
+    .sec-h .text { flex: 1; line-height: 1.05; }
+    .sec-h .text .eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9.5pt; letter-spacing: 4px; font-weight: 700;
+      color: var(--muted); text-transform: uppercase;
+    }
+    .sec-h .text h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 24pt; font-weight: 800;
+      color: var(--ink);
+      margin: 5pt 0 0 0;
+      letter-spacing: -0.5pt;
+    }
+
+    .body-text { font-size: 15pt; line-height: 1.5; color: var(--ink-2); margin: 0; }
+    .body-text strong { color: var(--ink); font-weight: 700; }
+    ul.list { margin: 0; padding: 0; list-style: none; }
+    ul.list li {
+      font-size: 14.5pt; line-height: 1.45;
+      color: var(--ink-2);
+      padding: 7pt 0 7pt 24pt;
+      position: relative;
+    }
+    ul.list li::before {
+      content: ""; position: absolute; left: 0; top: 14pt;
+      width: 12pt; height: 12pt; border-radius: 50%;
+      background: var(--green-soft);
+      border: 2pt solid var(--green);
+    }
+    ul.list.a li::before { background: var(--amber-soft); border-color: var(--amber); }
+    ul.list.n li::before { background: var(--navy-soft);  border-color: var(--navy); }
+    ul.list li strong { color: var(--ink); font-weight: 700; }
+
+    /* Problem callout — refined ruby gradient, used ONCE */
+    .problem {
+      background: linear-gradient(135deg, var(--ruby-soft) 0%, #fff7ed 100%);
+      border: 2pt solid var(--ruby);
+      border-radius: 14pt;
+      padding: 0.24in 0.28in;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    .problem::before {
+      content: ""; position: absolute; right: -0.5in; top: -0.5in;
+      width: 2in; height: 2in;
+      background: radial-gradient(circle, rgba(190, 18, 60, 0.16), transparent 70%);
+    }
+    .problem .badge {
+      display: inline-flex; align-items: center; gap: 6pt;
+      padding: 4pt 12pt; border-radius: 999pt;
+      background: var(--ruby); color: white;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt; font-weight: 800; letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .problem h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 23pt; font-weight: 800; color: var(--ruby-d);
+      margin: 10pt 0 8pt 0;
+      letter-spacing: -0.4pt;
+    }
+    .problem ul.list li::before { background: white; border-color: var(--ruby); }
+
+    /* Tech badges — refined */
+    .tech-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 10pt;
+    }
+    .tech {
+      display: flex; align-items: center; gap: 10pt;
+      padding: 11pt 13pt;
+      background: white;
+      border: 1pt solid var(--hair);
+      border-radius: 10pt;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13pt; font-weight: 600;
+      color: var(--ink);
+    }
+    .tech .ic {
+      width: 24pt; height: 24pt; border-radius: 7pt;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: white;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 11pt;
+    }
+    .tech .ic.g { background: var(--green); }
+    .tech .ic.a { background: var(--amber); }
+    .tech .ic.n { background: var(--navy); }
+    .tech .ic.k { background: var(--ink); }
+
+    /* Architecture diagram */
+    .diagram {
+      background: linear-gradient(180deg, #fbfcfd 0%, white 100%);
+      border-radius: 12pt;
+      padding: 0.18in;
+      border: 1pt solid var(--hair);
+    }
+    svg.diagram-svg { width: 100%; height: auto; display: block; }
+
+    /* Methodology timeline */
+    .timeline { display: flex; flex-direction: column; gap: 8pt; }
+    .step {
+      display: grid; grid-template-columns: 0.52in 1fr; gap: 14pt;
+      align-items: flex-start;
+      padding: 10pt 0;
+      position: relative;
+    }
+    .step:not(:last-child)::after {
+      content: ""; position: absolute;
+      left: 0.26in; top: 0.6in; bottom: -2pt;
+      width: 2pt; background: var(--green-soft);
+    }
+    .step .num {
+      width: 0.52in; height: 0.52in; border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--green-d));
+      color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900; font-size: 19pt;
+      box-shadow: var(--shadow-sm);
+      z-index: 1;
+    }
+    .step .desc { padding-top: 6pt; }
+    .step .desc .t {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 16pt; color: var(--ink);
+      letter-spacing: -0.2pt;
+    }
+    .step .desc .d {
+      font-size: 13pt; color: var(--ink-2); margin-top: 3pt; line-height: 1.4;
+    }
+
+    /* Feature cards — refined */
+    .feature-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 10pt;
+    }
+    .feature {
+      padding: 11pt 13pt;
+      background: white;
+      border: 1pt solid var(--hair);
+      border-left: 3pt solid var(--green);
+      border-radius: 8pt;
+    }
+    .feature:nth-child(2n) { border-left-color: var(--amber); }
+    .feature .t {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 14pt; color: var(--ink);
+      letter-spacing: -0.2pt;
+    }
+    .feature .d {
+      font-size: 11.5pt; color: var(--muted); margin-top: 3pt; line-height: 1.4;
+    }
+
+    /* Future scope */
+    .future {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 10pt;
+    }
+    .future .item {
+      padding: 13pt 15pt;
+      background: linear-gradient(135deg, var(--amber-soft) 0%, white 100%);
+      border-radius: 10pt;
+      border: 1pt solid #fcd34d;
+    }
+    .future .item:nth-child(2) {
+      background: linear-gradient(135deg, var(--green-soft) 0%, white 100%);
+      border-color: #a7f3d0;
+    }
+    .future .item:nth-child(3) {
+      background: linear-gradient(135deg, var(--navy-soft) 0%, white 100%);
+      border-color: #bfdbfe;
+    }
+    .future .item:nth-child(4) {
+      background: linear-gradient(135deg, var(--ruby-soft) 0%, white 100%);
+      border-color: #fda4af;
+    }
+    .future .item .t {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 13.5pt; color: var(--ink);
+    }
+    .future .item .d {
+      font-size: 11.5pt; color: var(--ink-2); margin-top: 3pt; line-height: 1.4;
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      margin: 0.15in 0.9in 0.9in;
+      padding: 0.24in 0.3in;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      border-radius: 14pt;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.3in;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Stretch body grid cells equally so columns end at same height */
+    .body { align-items: start; }
+    .col { align-self: stretch; }
+    .footer::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5pt;
+      background: linear-gradient(180deg, var(--green), var(--amber));
+    }
+    .footer .thanks { padding-left: 10pt; }
+    .footer .thanks .eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt; letter-spacing: 4px; font-weight: 700;
+      color: rgba(255,255,255,0.6); text-transform: uppercase;
+    }
+    .footer .thanks .body {
+      font-size: 14pt; line-height: 1.45;
+      color: rgba(255,255,255,0.92); margin-top: 8pt;
+    }
+    .footer .stamp {
+      display: flex; align-items: center; gap: 12pt;
+      padding: 11pt 15pt;
+      background: rgba(255,255,255,0.05);
+      border: 1pt solid rgba(255,255,255,0.16);
+      border-radius: 10pt;
+    }
+    .footer .stamp img { width: 0.62in; height: 0.62in; object-fit: contain; }
+    .footer .stamp .t .top {
+      font-size: 10pt; letter-spacing: 2px;
+      color: rgba(255,255,255,0.65);
+    }
+    .footer .stamp .t .bot {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17pt; font-weight: 800; color: #34d399;
+      letter-spacing: -0.2pt;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ICON SPRITE -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+    </symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+    </symbol>
+    <symbol id="i-stack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+    </symbol>
+    <symbol id="i-network" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/>
+      <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+    </symbol>
+    <symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/>
+      <path d="M6 16V8a4 4 0 0 1 8 0v8a4 4 0 0 0 8 0V8"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+      <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+    </symbol>
+    <symbol id="i-admin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="7" height="9" rx="1.5"/>
+      <rect x="14" y="3" width="7" height="5" rx="1.5"/>
+      <rect x="14" y="12" width="7" height="9" rx="1.5"/>
+      <rect x="3" y="16" width="7" height="5" rx="1.5"/>
+    </symbol>
+  </svg>
+
+  <div class="poster">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-top">
+        <div class="uni">
+          <img src="npi-logo.png" alt="NPIUB" />
+          <div class="text">
+            <div class="name">NPI UNIVERSITY OF BANGLADESH</div>
+            <div class="dept">Department of Computer Science &amp; Engineering</div>
+          </div>
+        </div>
+        <div class="event">
+          <div class="eyebrow">FINAL YEAR PROJECT</div>
+          <div class="name">NPIUB Project Fair 2026</div>
+        </div>
+      </div>
+
+      <div class="hero-title">
+        <div class="eyebrow">FULL PROJECT OVERVIEW</div>
+        <h1>UNI<span class="accent">BUS</span> LIVE</h1>
+        <div class="tagline">
+          A real-time university bus tracking platform — passenger app, driver
+          app, web admin, and GPS hardware unified into one production-grade
+          system. Live positions, smart pre-trip visibility, and stop-arrival
+          push alerts, served in English &amp; বাংলা.
+        </div>
+      </div>
+    </div>
+
+    <!-- STAT STRIP -->
+    <div class="stats">
+      <div class="stat">
+        <div class="num">&lt; 2s</div>
+        <div class="lbl">Live update latency</div>
+        <div class="sub">Socket.IO push + polling fallback</div>
+      </div>
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="lbl">Platforms unified</div>
+        <div class="sub">Passenger · Driver · Admin Web</div>
+      </div>
+      <div class="stat">
+        <div class="num">2</div>
+        <div class="lbl">Languages built-in</div>
+        <div class="sub">English &amp; বাংলা (Bengali)</div>
+      </div>
+      <div class="stat">
+        <div class="num">60m</div>
+        <div class="lbl">Pre-trip visibility</div>
+        <div class="sub">See bus before it departs</div>
+      </div>
+    </div>
+
+    <!-- TEAM STRIP -->
+    <div class="team-strip">
+      <div class="team-name">
+        <div class="eyebrow">Team</div>
+        <div class="name">ROUTE-X</div>
+      </div>
+      <div></div>
+      <div class="members3">
+        <div class="member">
+          <div class="av">SH</div>
+          <div class="meta">
+            <div class="n">Md. Shishir Hossain</div>
+            <div class="id">ID: 0000 · Batch 00</div>
+          </div>
+        </div>
+        <div class="member">
+          <div class="av">M2</div>
+          <div class="meta">
+            <div class="n">[Member Two]</div>
+            <div class="id">ID: 0000 · Batch 00</div>
+          </div>
+        </div>
+        <div class="member">
+          <div class="av">M3</div>
+          <div class="meta">
+            <div class="n">[Member Three]</div>
+            <div class="id">ID: 0000 · Batch 00</div>
+          </div>
+        </div>
+      </div>
+      <div class="super">
+        <span class="label">Supervisor</span>
+        <span class="name">[Supervisor Name], [Designation]</span>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="body">
+
+      <!-- LEFT COLUMN -->
+      <div class="col">
+
+        <div class="card accent-g">
+          <div class="sec-h">
+            <div class="iconbox"><svg><use href="#i-info"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">01 · About</div>
+              <h2>Introduction</h2>
+            </div>
+          </div>
+          <p class="body-text">
+            UniBus Live answers a simple question every university student
+            asks every morning: <strong>"Where's my bus?"</strong> The
+            platform fuses driver-phone GPS, hardware GPS devices, and a
+            real-time backend into one polished app — so passengers see
+            live positions on a map, get push alerts before their stop,
+            and admins manage the whole fleet from one dashboard.
+          </p>
+        </div>
+
+        <div class="card accent-g">
+          <div class="sec-h">
+            <div class="iconbox"><svg><use href="#i-target"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">02 · Goals</div>
+              <h2>Objectives</h2>
+            </div>
+          </div>
+          <ul class="list">
+            <li><strong>Show every active bus</strong> on a live, accurate map</li>
+            <li><strong>Cut wait time</strong> at stops with ETA + stop alerts</li>
+            <li><strong>Pre-trip visibility</strong> — see the bus before it departs</li>
+            <li><strong>Empower admins</strong> with full fleet &amp; routes control</li>
+            <li><strong>Inclusivity</strong> via English + বাংলা (Bengali)</li>
+          </ul>
+        </div>
+
+        <div class="problem">
+          <div class="badge">
+            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5.5 1.5 V6 M5.5 8.5 V9.5" stroke-linecap="round"/></svg>
+            Problem Statement
+          </div>
+          <h3>Riders wait blindly. Admins fly blind.</h3>
+          <ul class="list">
+            <li>Students wait at stops with no clue when the bus will come</li>
+            <li>Existing WhatsApp groups give stale, fragmented information</li>
+            <li>Drivers don't communicate delays or route deviations</li>
+            <li>No central dashboard for fleet, trips, or live operations</li>
+            <li>Language barrier — most transit tools are English-only</li>
+          </ul>
+        </div>
+
+        <div class="card accent-a">
+          <div class="sec-h">
+            <div class="iconbox a"><svg><use href="#i-stack"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">03 · Stack</div>
+              <h2>Key Technologies</h2>
+            </div>
+          </div>
+          <div class="tech-grid">
+            <div class="tech"><div class="ic g">N</div>Node.js + Express</div>
+            <div class="tech"><div class="ic g">P</div>PostgreSQL + Prisma</div>
+            <div class="tech"><div class="ic n">S</div>Socket.IO + Redis</div>
+            <div class="tech"><div class="ic k">▲</div>Next.js 16 (Vercel)</div>
+            <div class="tech"><div class="ic a">R</div>React Native 0.85</div>
+            <div class="tech"><div class="ic a">E</div>Expo SDK 56 (Hermes)</div>
+            <div class="tech"><div class="ic n">G</div>Google Maps SDK</div>
+            <div class="tech"><div class="ic g">T</div>Traccar GPS Server</div>
+          </div>
+        </div>
+
+        <div class="card accent-n">
+          <div class="sec-h">
+            <div class="iconbox n"><svg><use href="#i-network"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">04 · Design</div>
+              <h2>System Architecture</h2>
+            </div>
+          </div>
+          <div class="diagram">
+            <svg class="diagram-svg" viewBox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g-green" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stop-color="#047857"/><stop offset="1" stop-color="#065f46"/>
+                </linearGradient>
+                <linearGradient id="g-amber" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stop-color="#b45309"/><stop offset="1" stop-color="#92400e"/>
+                </linearGradient>
+                <linearGradient id="g-navy" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stop-color="#1e3a8a"/><stop offset="1" stop-color="#1e40af"/>
+                </linearGradient>
+                <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5"
+                        markerWidth="7" markerHeight="7" orient="auto">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+                </marker>
+                <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.16"/>
+                </filter>
+              </defs>
+
+              <g filter="url(#sh)">
+                <rect x="30" y="20" width="220" height="80" rx="12" fill="url(#g-amber)"/>
+                <text x="140" y="50" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="14" fill="white">DRIVER PHONE GPS</text>
+                <text x="140" y="72" text-anchor="middle" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.88)">Expo Location · Background mode</text>
+                <text x="140" y="88" text-anchor="middle" font-family="Inter" font-size="10" fill="rgba(255,255,255,0.72)">Foreground service · battery-aware</text>
+              </g>
+              <g filter="url(#sh)">
+                <rect x="370" y="20" width="220" height="80" rx="12" fill="url(#g-amber)"/>
+                <text x="480" y="50" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="14" fill="white">BUS GPS DEVICE</text>
+                <text x="480" y="72" text-anchor="middle" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.88)">Traccar-compatible · 200+ models</text>
+                <text x="480" y="88" text-anchor="middle" font-family="Inter" font-size="10" fill="rgba(255,255,255,0.72)">Polling + WebSocket realtime</text>
+              </g>
+
+              <path d="M140 102 L140 142" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#ah)"/>
+              <path d="M480 102 L480 142" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#ah)"/>
+
+              <g filter="url(#sh)">
+                <rect x="60" y="145" width="500" height="105" rx="14" fill="url(#g-green)"/>
+                <text x="310" y="175" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="16" fill="white">BACKEND API + REALTIME ENGINE</text>
+                <text x="310" y="200" text-anchor="middle" font-family="Inter" font-size="12" fill="rgba(255,255,255,0.9)">Node.js · Express · Prisma · PostgreSQL · Redis</text>
+                <text x="310" y="220" text-anchor="middle" font-family="Inter" font-size="12" fill="rgba(255,255,255,0.9)">Socket.IO fan-out · Pre-trip lifecycle · Auto-start</text>
+                <text x="310" y="240" text-anchor="middle" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.75)">PM2 on Webuzo VPS · Audit logs · Rate limited</text>
+              </g>
+
+              <path d="M125 252 L125 290" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#ah)"/>
+              <path d="M310 252 L310 290" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#ah)"/>
+              <path d="M495 252 L495 290" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#ah)"/>
+
+              <g filter="url(#sh)">
+                <rect x="40" y="290" width="170" height="60" rx="12" fill="url(#g-navy)"/>
+                <text x="125" y="316" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="13" fill="white">PASSENGER APP</text>
+                <text x="125" y="334" text-anchor="middle" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.8)">Android · iOS-ready</text>
+              </g>
+              <g filter="url(#sh)">
+                <rect x="225" y="290" width="170" height="60" rx="12" fill="url(#g-navy)"/>
+                <text x="310" y="316" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="13" fill="white">DRIVER APP</text>
+                <text x="310" y="334" text-anchor="middle" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.8)">Background location</text>
+              </g>
+              <g filter="url(#sh)">
+                <rect x="410" y="290" width="170" height="60" rx="12" fill="url(#g-navy)"/>
+                <text x="495" y="316" text-anchor="middle" font-family="Plus Jakarta Sans" font-weight="800" font-size="13" fill="white">ADMIN WEB</text>
+                <text x="495" y="334" text-anchor="middle" font-family="Inter" font-size="11" fill="rgba(255,255,255,0.8)">Next.js · Vercel</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Deployment & Operations -->
+        <div class="card accent-a">
+          <div class="sec-h">
+            <div class="iconbox a"><svg><use href="#i-rocket"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">05 · Production</div>
+              <h2>Deployment &amp; Hardening</h2>
+            </div>
+          </div>
+          <p class="body-text" style="margin-bottom: 12pt;">
+            Every layer is deployed with real-world operability in mind —
+            process supervisors, edge caching, signed builds, and audit logs
+            on every state change.
+          </p>
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="t">PM2 on Webuzo VPS</div>
+              <div class="d">Auto-restart · log retention · zero-downtime reload</div>
+            </div>
+            <div class="feature">
+              <div class="t">Vercel Edge</div>
+              <div class="d">Admin web with global CDN + auto preview deploys</div>
+            </div>
+            <div class="feature">
+              <div class="t">EAS Build · ProGuard</div>
+              <div class="d">Signed APKs · ABI splits · Hermes AOT compile</div>
+            </div>
+            <div class="feature">
+              <div class="t">Audit + Rate Limiting</div>
+              <div class="d">Every write logged · login &amp; OTP throttled</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="col">
+
+        <div class="card accent-g">
+          <div class="sec-h">
+            <div class="iconbox"><svg><use href="#i-route"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">06 · Process</div>
+              <h2>Methodology</h2>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="step">
+              <div class="num">1</div>
+              <div class="desc">
+                <div class="t">GPS source emits location</div>
+                <div class="d">Driver phone or bus hardware sends lat/lng every 1–5 sec.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <div class="desc">
+                <div class="t">Backend ingests &amp; normalises</div>
+                <div class="d">Smoothing, stale detection, idempotent storage, audit log.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <div class="desc">
+                <div class="t">Pre-trip phase derived</div>
+                <div class="d">AT_DEPOT → APPROACHING_ORIGIN → AT_ORIGIN via geofence + speed.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">4</div>
+              <div class="desc">
+                <div class="t">Auto-start on origin dwell</div>
+                <div class="d">30s within origin + sustained movement → trip RUNNING.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">5</div>
+              <div class="desc">
+                <div class="t">Realtime fan-out</div>
+                <div class="d">Socket.IO push to all subscribers + REST polling fallback.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">6</div>
+              <div class="desc">
+                <div class="t">Passenger sees ETA + alerts</div>
+                <div class="d">Live map, stop progression, push notification before arrival.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card accent-n">
+          <div class="sec-h">
+            <div class="iconbox n"><svg><use href="#i-admin"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">07 · Operations</div>
+              <h2>Admin Web Dashboard</h2>
+            </div>
+          </div>
+          <p class="body-text" style="margin-bottom: 12pt;">
+            A single <strong>Next.js console</strong> on Vercel gives transport
+            admins full control over the fleet — no terminals, no databases,
+            no manual SQL.
+          </p>
+          <div class="feature-grid">
+            <div class="feature"><div class="t">User Approval</div><div class="d">Vet &amp; approve passenger registrations</div></div>
+            <div class="feature"><div class="t">Fleet &amp; Drivers</div><div class="d">Buses, capacity, plates · driver onboarding</div></div>
+            <div class="feature"><div class="t">Routes &amp; Stops</div><div class="d">Visual editor with polyline + ordered stops</div></div>
+            <div class="feature"><div class="t">Schedules</div><div class="d">Per-day departure times with AM/PM picker</div></div>
+            <div class="feature"><div class="t">GPS Devices</div><div class="d">Traccar or Direct ingest · live health badges</div></div>
+            <div class="feature"><div class="t">Service Alerts</div><div class="d">Broadcast announcements to passenger app</div></div>
+            <div class="feature"><div class="t">Live Operations</div><div class="d">Real-time view + manual trip start/end</div></div>
+            <div class="feature"><div class="t">Analytics &amp; Audit</div><div class="d">Usage stats · tamper-proof audit logs</div></div>
+          </div>
+        </div>
+
+        <div class="card accent-g">
+          <div class="sec-h">
+            <div class="iconbox"><svg><use href="#i-check"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">08 · Outcomes</div>
+              <h2>Results &amp; Features</h2>
+            </div>
+          </div>
+          <div class="feature-grid">
+            <div class="feature"><div class="t">Live Map Tracking</div><div class="d">Sub-2-second bus position updates</div></div>
+            <div class="feature"><div class="t">Pre-trip Phases</div><div class="d">Bus shown 60 min before departure</div></div>
+            <div class="feature"><div class="t">Smart Auto-Start</div><div class="d">Trips begin when GPS confirms origin</div></div>
+            <div class="feature"><div class="t">Stop Alerts</div><div class="d">Push notifications before bus arrives</div></div>
+            <div class="feature"><div class="t">Multi-day Schedules</div><div class="d">Today, Tomorrow, All Days planning</div></div>
+            <div class="feature"><div class="t">Bilingual UI</div><div class="d">Full English + বাংলা on every screen</div></div>
+            <div class="feature"><div class="t">Admin Dashboard</div><div class="d">Fleet, routes, schedules, analytics</div></div>
+            <div class="feature"><div class="t">Production-Grade</div><div class="d">PM2 · Redis · ProGuard · audit logs</div></div>
+          </div>
+        </div>
+
+        <div class="card accent-a">
+          <div class="sec-h">
+            <div class="iconbox a"><svg><use href="#i-rocket"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">09 · Roadmap</div>
+              <h2>Future Scope</h2>
+            </div>
+          </div>
+          <div class="future">
+            <div class="item">
+              <div class="t">iOS Build</div>
+              <div class="d">Same React Native codebase, zero rewrite, App Store distribution.</div>
+            </div>
+            <div class="item">
+              <div class="t">Multi-University SaaS</div>
+              <div class="d">Per-tenant branding, billing, isolated data — sell to other campuses.</div>
+            </div>
+            <div class="item">
+              <div class="t">AI-Powered ETA</div>
+              <div class="d">Historical traffic + ML model for predictive arrival accuracy.</div>
+            </div>
+            <div class="item">
+              <div class="t">QR Boarding</div>
+              <div class="d">Capacity heatmaps, contactless validation, ride-history per student.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pilot Validation -->
+        <div class="card accent-g">
+          <div class="sec-h">
+            <div class="iconbox"><svg><use href="#i-check"/></svg></div>
+            <div class="text">
+              <div class="eyebrow">10 · Validation</div>
+              <h2>Pilot &amp; Production</h2>
+            </div>
+          </div>
+          <p class="body-text" style="margin-bottom: 12pt;">
+            This isn't a prototype. The platform runs in production on a
+            real VPS, serves real students on real routes, and is hardened
+            through repeated pilot iterations.
+          </p>
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="t">Live Production</div>
+              <div class="d">PM2-managed backend on VPS · 24/7 uptime</div>
+            </div>
+            <div class="feature">
+              <div class="t">Pilot-Validated</div>
+              <div class="d">Tested by real students on actual campus routes</div>
+            </div>
+            <div class="feature">
+              <div class="t">Multi-Device QA</div>
+              <div class="d">Android 8+ devices · varied screen sizes</div>
+            </div>
+            <div class="feature">
+              <div class="t">Hardened Edge Cases</div>
+              <div class="d">Offline · stale data · missed alerts · race conditions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="thanks">
+        <div class="eyebrow">Acknowledgement</div>
+        <div class="body">
+          We sincerely thank our supervisor and the Department of Computer
+          Science &amp; Engineering, NPI University of Bangladesh, for guidance,
+          infrastructure support, and the opportunity to build and pilot a
+          real production-grade transport platform.
+        </div>
+      </div>
+      <div class="stamp">
+        <img src="npi-logo.png" alt="NPIUB" />
+        <div class="t">
+          <div class="top">PRESENTED AT</div>
+          <div class="bot">NPIUB · 2026</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
